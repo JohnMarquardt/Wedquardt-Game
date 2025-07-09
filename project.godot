@@ -11,5 +11,6 @@ config_version=5
 [application]
 
 config/name="Wedardt Game"
+run/main_scene="uid://cko8do1nm8ls2"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"

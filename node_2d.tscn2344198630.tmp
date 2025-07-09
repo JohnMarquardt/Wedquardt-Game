@@ -24,8 +24,3 @@ script = ExtResource("4_d21ai")
 [node name="Sledgehammer" type="Sprite2D" parent="."]
 position = Vector2(723, 433)
 texture = ExtResource("5_rj586")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_right = 149.0
-offset_bottom = 25.0
-text = "Welcome to Trash"
