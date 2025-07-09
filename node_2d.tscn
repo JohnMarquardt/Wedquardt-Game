@@ -1,31 +1,42 @@
-[gd_scene load_steps=6 format=3 uid="uid://cko8do1nm8ls2"]
+[gd_scene load_steps=5 format=3 uid="uid://cko8do1nm8ls2"]
 
-[ext_resource type="Texture2D" uid="uid://xhbfyxeb0y2h" path="res://Assets/shovel.png" id="1_wtcfe"]
 [ext_resource type="Texture2D" uid="uid://dqug4ig52xs05" path="res://Assets/coffee.png" id="2_q6r6c"]
-[ext_resource type="Texture2D" uid="uid://dag6roovk374r" path="res://Assets/money.png" id="3_kdubu"]
-[ext_resource type="Script" uid="uid://ckswl36d1ithk" path="res://money.gd" id="4_d21ai"]
-[ext_resource type="Texture2D" uid="uid://drcmdrxb81wyi" path="res://Assets/sledgehammer.png" id="5_rj586"]
+[ext_resource type="Script" uid="uid://dxoqq1l8dc8s6" path="res://coffee.gd" id="3_0hol4"]
+[ext_resource type="Script" uid="uid://dfxhvqxfvl3a1" path="res://coffee_drunk.gd" id="4_q6r6c"]
 
-[node name="MainScene" type="Node2D"]
+[sub_resource type="GDScript" id="GDScript_epypp"]
+script/source = "extends Node2D
 
-[node name="Shovel" type="Sprite2D" parent="."]
-position = Vector2(374, 411)
-texture = ExtResource("1_wtcfe")
+class CharacterData: 
+	var Name:String = \"Tim\"
+	var Score:int
+	
+func _unhandled_input(event):
+		if event is InputEventKey:
+			if event.pressed and event.keycode == KEY_ESCAPE:
+				get_tree().quit()
+"
+
+[node name="Main" type="Node2D"]
+script = SubResource("GDScript_epypp")
 
 [node name="Coffee" type="Sprite2D" parent="."]
-position = Vector2(725, 220)
+position = Vector2(592, 296)
+scale = Vector2(3.01282, 2.88053)
 texture = ExtResource("2_q6r6c")
+script = ExtResource("3_0hol4")
 
-[node name="Money" type="Sprite2D" parent="."]
-position = Vector2(223, 201)
-texture = ExtResource("3_kdubu")
-script = ExtResource("4_d21ai")
+[node name="BaseHeader" type="Label" parent="."]
+offset_left = 458.0
+offset_top = 384.0
+offset_right = 577.0
+offset_bottom = 407.0
+text = "Coffees Drunk: "
 
-[node name="Sledgehammer" type="Sprite2D" parent="."]
-position = Vector2(723, 433)
-texture = ExtResource("5_rj586")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_right = 149.0
-offset_bottom = 25.0
-text = "Welcome to Trash"
+[node name="CoffeeDrunk" type="Label" parent="BaseHeader"]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 1.0
+offset_right = 159.0
+offset_bottom = 24.0
+script = ExtResource("4_q6r6c")

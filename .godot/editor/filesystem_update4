@@ -1,2 +1,5 @@
 res://node_2d.tscn
-res://money.gd
+res://node_2d.gd
+res://coffee.gd
+res://coffee_drunk.gd
+res://globals.gd
