@@ -1,6 +1,6 @@
 res://node_2d.tscn
-res://node_2d.gd
-res://coffee.gd
-res://coffee_drunk.gd
-res://globals.gd
 res://death_header.gd
+res://main.tscn
+res://globals.gd
+res://money.tscn
+res://money.gd
